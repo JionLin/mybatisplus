@@ -31,7 +31,7 @@ class Mybatisdemo1ApplicationTests {
         user.setName("xz");
         int value = userMapper.insert(user);
         System.out.println(value);
-        System.out.println(user.getId());
+        System.out.println(user.getUid());
     }
     @Test
     public void testDeleteMap(){
@@ -47,7 +47,7 @@ class Mybatisdemo1ApplicationTests {
     public void testUpdate(){
 
         User user=new User();
-        user.setId(3L);
+        user.setUid(3L);
         user.setAge(22);
         user.setName("johnny");
         int value = userMapper.updateById(user);
