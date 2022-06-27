@@ -15,4 +15,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserMapper extends BaseMapper<User> {
     Page<User> selectPageVo(@Param("page") Page<User> page, @Param("age") Integer age);
+
+    User selectUserById(@Param("id") long id);
 }

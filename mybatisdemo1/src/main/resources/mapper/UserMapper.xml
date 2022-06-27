@@ -8,4 +8,9 @@
     <select id="selectPageVo" resultType="com.jiaolin.mybatisdemo1.pojo.User">
         select * from t_user where age >=#{age}
     </select>
+    
+    <select id="selectUserById" resultType="com.jiaolin.mybatisdemo1.pojo.User">
+        select *
+        from t_user where uid=#{id};
+    </select>
 </mapper>

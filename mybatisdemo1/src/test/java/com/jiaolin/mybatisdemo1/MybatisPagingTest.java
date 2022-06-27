@@ -40,12 +40,12 @@ public class MybatisPagingTest {
         Page<User> page = new Page<>(2, 3);
         userMapper.selectPageVo(page, 18);
         List<User> users = page.getRecords();
-        // users.forEach(System.out::println);
-        // System.out.println("当前页\t" + page.getCurrent());
-        // System.out.println("每页显示的条数：\t" + page.getSize());
-        // System.out.println("总记录数：\t" + page.getTotal());
-        // System.out.println("总页数：\t" + page.getPages());
-        // System.out.println("是否有上一页\t" + page.hasPrevious());
-        // System.out.println("是否有下一页\t" + page.hasNext());
+        users.forEach(System.out::println);
+        System.out.println("当前页\t" + page.getCurrent());
+        System.out.println("每页显示的条数：\t" + page.getSize());
+        System.out.println("总记录数：\t" + page.getTotal());
+        System.out.println("总页数：\t" + page.getPages());
+        System.out.println("是否有上一页\t" + page.hasPrevious());
+        System.out.println("是否有下一页\t" + page.hasNext());
     }
 }
