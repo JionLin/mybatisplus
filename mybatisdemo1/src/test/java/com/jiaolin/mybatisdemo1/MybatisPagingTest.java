@@ -1,6 +1,7 @@
 package com.jiaolin.mybatisdemo1;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.jiaolin.mybatisdemo1.enums.SexEnum;
 import com.jiaolin.mybatisdemo1.mapper.ProductMapper;
 import com.jiaolin.mybatisdemo1.mapper.UserMapper;
 import com.jiaolin.mybatisdemo1.pojo.Product;
@@ -79,5 +80,14 @@ public class MybatisPagingTest {
 
         Product p3 = productMapper.selectById(1L); //价格覆盖，最后的结果:70 System.out.println("最后的结果:" + p3.getPrice());
         System.out.println("最后的结果" + p3);
+    }
+
+    @Test
+    public void test4(){
+        User user=new User();
+        user.setAge(18);
+        user.setSex(SexEnum.FEMALE);
+        int value = userMapper.insert(user);
+        System.out.println(value);
     }
 }
