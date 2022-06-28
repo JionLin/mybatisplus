@@ -3,10 +3,15 @@ package com.jiaolin.mybatis_plus_gene;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import com.jiaolin.mybatis_plus_gene.service.ProductService;
+import com.jiaolin.mybatis_plus_gene.service.UserService;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Collections;
 
-// @SpringBootTest
+@SpringBootTest
 class MybatisPlusGeneApplicationTests {
 
 
@@ -34,4 +39,13 @@ class MybatisPlusGeneApplicationTests {
     }
 
 
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private ProductService productService;
+    @Test
+    public void testDynamicDataSource(){
+        System.out.println(userService.getById(1L));
+        System.out.println(productService.getById(1L));
+    }
 }
