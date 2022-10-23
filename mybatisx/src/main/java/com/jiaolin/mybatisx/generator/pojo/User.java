@@ -4,15 +4,15 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.jiaolin.mybatisx.generator.handler.EncryptHandler;
 import lombok.Data;
 
 import java.io.Serializable;
 
 /**
- * 
  * @TableName t_user
  */
-@TableName(value ="t_user")
+@TableName(value = "t_user")
 @Data
 public class User implements Serializable {
     /**
@@ -24,6 +24,7 @@ public class User implements Serializable {
     /**
      * 姓名
      */
+    @TableField(typeHandler = EncryptHandler.class)
     private String userName;
 
     /**
@@ -37,12 +38,12 @@ public class User implements Serializable {
     private String email;
 
     /**
-     * 
+     *
      */
     private Integer isDelete;
 
     /**
-     * 
+     *
      */
     private Integer sex;
 
